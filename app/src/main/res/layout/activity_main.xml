@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#9E9AA6"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:id="@+id/logoImageView"/>
+
+    <Button
+        android:id="@+id/expenseTrackerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_background"
+        android:text="Expense Tracker"
+        android:textColor="#202020"
+        android:textSize="18sp"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/budgetManagementButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/expenseTrackerButton"
+        android:background="@drawable/button_background"
+        android:text="Budget Management"
+        android:textColor="#202020"
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/financialInsightsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/budgetManagementButton"
+        android:background="@drawable/button_background"
+        android:text="Financial Insights"
+        android:textColor="#202020"
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/expenseHistoryButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/financialInsightsButton"
+        android:background="@drawable/button_background"
+        android:text="Expense History"
+        android:textColor="#202020"
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/totalBudgetTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:textSize="18sp"
+        android:textColor="#202020"/>
+
+</RelativeLayout>

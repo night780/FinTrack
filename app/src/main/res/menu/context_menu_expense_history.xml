@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/deleteExpense"
+        android:title="Delete Expense"
+        android:textColor="#202020" />
+
+    <item
+        android:id="@+id/menuBackground"
+        android:title=""
+        android:background="#605F63" />
+</menu>
