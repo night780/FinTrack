@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     tools:context=".BudgetManagementActivity"
-    android:background="#9E9AA6">
+    android:background="#F2F2F2">
 
     <TextView
         android:id="@+id/instructionTextView"
@@ -31,6 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"
+        android:background="@drawable/button_background"
         android:layout_below="@id/budgetEditText"
         android:layout_marginTop="16dp"
         android:textColor="#202020"/>

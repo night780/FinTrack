@@ -1,7 +1,7 @@
 <resources>
     <style name="FinTrack" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Define your primary and accent colors here -->
-        <item name="colorPrimary">#B05D1AD5</item>
+        <item name="colorPrimary">#F2F2F2</item>
 
 
         <!-- Define the style for your menu items -->

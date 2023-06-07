@@ -3,6 +3,6 @@
     android:id="@+id/expenseTextView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:textColor="#202020"
+    android:textColor="#F2F2F2"
     android:textSize="18sp"
     android:padding="16dp" />
