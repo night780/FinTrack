@@ -27,10 +27,10 @@
         android:textColor="#202020"/>
 
     <Button
-        android:id="@+id/saveButton"
+        android:id="@+id/setBudgetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
+        android:text="Set Budget"
         android:background="@drawable/button_background"
         android:layout_below="@id/budgetEditText"
         android:layout_marginTop="16dp"
@@ -46,8 +46,5 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:scaleType="centerInside" />
-
-
-
 
 </RelativeLayout>

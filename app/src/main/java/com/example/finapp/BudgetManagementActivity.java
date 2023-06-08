@@ -1,5 +1,6 @@
 package com.example.finapp;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -10,16 +11,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-/**
- * The type Budget management activity.
- */
 public class BudgetManagementActivity extends AppCompatActivity {
 
     private EditText budgetEditText;
-    private Button saveButton;
+    private Button setBudgetButton;
     private ImageButton backButton;
-
     private SharedPreferences sharedPreferences;
+
+    private static final String SHARED_PREFS_FILE = "ExpenseTrackerPrefs";
+    private static final String TOTAL_BUDGET_KEY = "totalBudget";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,23 +27,14 @@ public class BudgetManagementActivity extends AppCompatActivity {
         setContentView(R.layout.activity_budget_management);
 
         budgetEditText = findViewById(R.id.budgetEditText);
-        saveButton = findViewById(R.id.saveButton);
+        setBudgetButton = findViewById(R.id.setBudgetButton);
         backButton = findViewById(R.id.backButton);
+        sharedPreferences = getSharedPreferences(SHARED_PREFS_FILE, MODE_PRIVATE);
 
-        sharedPreferences = getSharedPreferences("ExpenseTrackerPrefs", MODE_PRIVATE);
-
-        saveButton.setOnClickListener(new View.OnClickListener() {
+        setBudgetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String budgetString = budgetEditText.getText().toString();
-                if (!budgetString.isEmpty()) {
-                    float budget = Float.parseFloat(budgetString);
-                    updateBudget(budget);
-                    Toast.makeText(BudgetManagementActivity.this, "Budget saved successfully", Toast.LENGTH_SHORT).show();
-                    finish();
-                } else {
-                    Toast.makeText(BudgetManagementActivity.this, "Please enter a valid budget amount", Toast.LENGTH_SHORT).show();
-                }
+                setBudget();
             }
         });
 
@@ -55,9 +46,28 @@ public class BudgetManagementActivity extends AppCompatActivity {
         });
     }
 
-    private void updateBudget(float budget) {
+    private void setBudget() {
+        String budgetString = budgetEditText.getText().toString().trim();
+        if (!budgetString.isEmpty()) {
+            float totalBudget = Float.parseFloat(budgetString);
+            saveBudgetToSharedPreferences(totalBudget);
+            Toast.makeText(BudgetManagementActivity.this, "Budget set successfully!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(BudgetManagementActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Toast.makeText(BudgetManagementActivity.this, "Please enter a valid budget value.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void saveBudgetToSharedPreferences(float totalBudget) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putFloat("totalBudget", budget);
+        editor.putFloat(TOTAL_BUDGET_KEY, totalBudget);
         editor.apply();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }
