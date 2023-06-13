@@ -14,7 +14,6 @@ The Financial Management App is a simple expense tracking application designed t
 The Financial Management App is built using the following technologies:
 
 - Android: The app is developed for the Android platform using Java programming language.
-- SQLite: The app uses SQLite database to store and manage expense data.
 - SharedPreferences: SharedPreferences is used to store budget and expense history data.
 - EazeGraph Library: The EazeGraph library is used to create visually appealing charts for budget insights.
 
