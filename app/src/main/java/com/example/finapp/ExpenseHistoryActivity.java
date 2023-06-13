@@ -19,24 +19,29 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * The ExpenseHistoryActivity class is responsible for displaying and managing the expense history.
+ * It loads the expense list from SharedPreferences and allows the user to delete expenses.
+ * @Author Jacob jonas
+ * @Date 6/10/23
+ */
 public class ExpenseHistoryActivity extends AppCompatActivity {
 
-    private ListView expenseHistoryListView;
-    private ArrayAdapter<String> expenseListAdapter;
-    private ArrayList<String> expenseList;
-    private ImageButton backButton;
+    private ListView expenseHistoryListView; // ListView to display the expense history
+    private ArrayAdapter<String> expenseListAdapter; // Adapter for the expense history ListView
+    private ArrayList<String> expenseList; // List of expenses
+    private ImageButton backButton; // ImageButton to go back
 
-    private static final String SHARED_PREFS_FILE = "ExpenseHistorySharedPrefs";
-    private static final String EXPENSE_LIST_KEY = "ExpenseList";
+    private static final String SHARED_PREFS_FILE = "ExpenseHistorySharedPrefs"; // File name for SharedPreferences
+    private static final String EXPENSE_LIST_KEY = "ExpenseList"; // Key for storing the expense list
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expense_history);
 
-        expenseHistoryListView = findViewById(R.id.expenseHistoryListView);
-
-        backButton = findViewById(R.id.backButton);
+        expenseHistoryListView = findViewById(R.id.expenseHistoryListView); // Initialize the expense history ListView
+        backButton = findViewById(R.id.backButton); // Initialize the back button
 
         // Initialize the expense list
         expenseList = new ArrayList<>();
@@ -54,7 +59,7 @@ public class ExpenseHistoryActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                onBackPressed(); // Call the method to go back
             }
         });
     }
@@ -89,6 +94,9 @@ public class ExpenseHistoryActivity extends AppCompatActivity {
         return super.onContextItemSelected(item);
     }
 
+    /**
+     * Loads the expense list from SharedPreferences and updates the ListView.
+     */
     private void loadExpenseListFromSharedPreferences() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS_FILE, Context.MODE_PRIVATE);
         Set<String> expenseSet = sharedPreferences.getStringSet(EXPENSE_LIST_KEY, null);
@@ -96,25 +104,26 @@ public class ExpenseHistoryActivity extends AppCompatActivity {
             expenseList.clear(); // Clear the list before adding new entries
             expenseList.addAll(expenseSet);
             if (expenseListAdapter != null) {
-                expenseListAdapter.notifyDataSetChanged();
+                expenseListAdapter.notifyDataSetChanged(); // Notify the adapter of the data change
             }
         }
     }
 
-
-
+    /**
+     * Saves the expense list to SharedPreferences.
+     */
     private void saveExpenseListToSharedPreferences() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS_FILE, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Set<String> expenseSet = new HashSet<>(expenseList);
-        editor.putStringSet(EXPENSE_LIST_KEY, expenseSet);
-        editor.apply();
+        editor.putStringSet(EXPENSE_LIST_KEY, expenseSet); // Put the expense list in SharedPreferences
+        editor.apply(); // Apply the changes
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            onBackPressed();
+            onBackPressed(); // Call the method to go back
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -125,6 +134,6 @@ public class ExpenseHistoryActivity extends AppCompatActivity {
         // Go back to the home screen
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-        finish();
+        finish(); // Finish the current activity
     }
 }

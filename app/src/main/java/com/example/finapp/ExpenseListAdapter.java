@@ -12,6 +12,8 @@ import java.util.List;
 
 /**
  * The type Expense list adapter.
+ * @Author Jacob jonas
+ * @Date 6/10/23
  */
 public class ExpenseListAdapter extends RecyclerView.Adapter<ExpenseListAdapter.ExpenseViewHolder> {
 

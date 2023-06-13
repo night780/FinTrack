@@ -11,7 +11,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 /**
- * The type Main activity.
+ * This is the main menu of the app.
+ *
+ *
+ * @Author Jacob jonas
+ * @Date 6/10/23
  */
 public class MainActivity extends AppCompatActivity {
 

@@ -2,6 +2,8 @@ package com.example.finapp;
 
 /**
  * The type Expense entry.
+ * @Author Jacob jonas
+ * @Date 6/10/23
  */
 public class ExpenseEntry {
     private String category;

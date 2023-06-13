@@ -14,6 +14,11 @@ import org.eazegraph.lib.models.PieModel;
 
 import java.util.Map;
 
+/**
+ * The type Financial insights activity.
+ * @Author Jacob jonas
+ * @Date 6/10/23
+ */
 public class FinancialInsightsActivity extends AppCompatActivity {
 
     private TextView totalBudgetTextView;
