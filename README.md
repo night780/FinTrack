@@ -9,6 +9,29 @@ The Financial Management App is a simple expense tracking application designed t
 - Financial Insights: The app provides insights into the user's budget and expense history, helping them analyze their spending patterns and make informed financial decisions.
 - Expense History: Users can view and manage their expense history, including the ability to delete individual expenses.
 
+
+<!-- Fintrack Screenshots -->
+<div style="display: flex; justify-content: center; align-items: center;">
+    <div style="padding: 10px; text-align: center;">
+        <img src="FinImage/Fintrack_home.png" alt="Home Page" style="width: 200px; height: auto;">
+        <img src="FinImage/Fintrack-track.png" alt="Tracking" style="width: 200px; height: auto;">
+        <img src="FinImage/FintrackHistory.png" alt="History" style="width: 200px; height: auto;">
+    </div>
+    <div style="padding: 10px; text-align: center;">
+        <img src="FinImage/Fintrack-budget.png" alt="Budget" style="width: 200px; height: auto;">
+        <img src="FinImage/Fintrack_AddExp.png" alt="Add Expense" style="width: 200px; height: auto;">
+    </div>
+</div>
+
+
+
+## Features
+
+- Track Expenses: Users can add and track their expenses, including the amount, date, and category of each expense.
+- Set Budgets: Users can set budgets for different expense categories to monitor their spending and stay within their financial goals.
+- Financial Insights: The app provides insights into the user's budget and expense history, helping them analyze their spending patterns and make informed financial decisions.
+- Expense History: Users can view and manage their expense history, including the ability to delete individual expenses.
+
 ## Technologies Used
 
 The Financial Management App is built using the following technologies:
